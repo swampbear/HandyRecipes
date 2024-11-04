@@ -1,0 +1,514 @@
+{
+  "recipes": [
+    {
+      "title": "Spaghetti Carbonara",
+      "description": "A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper.",
+      "estimated_time": "15-20 min",
+      "difficulty": "medium",
+      "portions": 2,
+      "recipe_components": [
+        {
+          "name": "Pasta Base",
+          "ingredients_per_portion": [
+            {
+              "name": "Spaghetti",
+              "measurement_type": "grams",
+              "amount_per_portion": 100
+            },
+            {
+              "name": "Pancetta",
+              "measurement_type": "grams",
+              "amount_per_portion": 50
+            }
+          ]
+        },
+        {
+          "name": "Sauce",
+          "ingredients_per_portion": [
+            {
+              "name": "Eggs",
+              "measurement_type": "units",
+              "amount_per_portion": 1
+            },
+            {
+              "name": "Pecorino Romano",
+              "measurement_type": "grams",
+              "amount_per_portion": 25
+            },
+            {
+              "name": "Black Pepper",
+              "measurement_type": "teaspoon",
+              "amount_per_portion": 0.5
+            }
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "number": 1,
+          "description": "Boil the spaghetti in salted water until al dente."
+        },
+        {
+          "number": 2,
+          "description": "In a separate pan, cook the pancetta until crispy."
+        },
+        {
+          "number": 3,
+          "description": "Whisk eggs and Pecorino Romano together."
+        },
+        {
+          "number": 4,
+          "description": "Combine pasta with pancetta and mix with egg mixture, stirring quickly."
+        },
+        {
+          "number": 5,
+          "description": "Serve immediately with extra Pecorino and black pepper."
+        }
+      ]
+    },
+    {
+      "title": "Chicken Curry",
+      "description": "A flavorful and spicy chicken curry made with a blend of spices and coconut milk.",
+      "estimated_time": "30-40 min",
+      "difficulty": "hard",
+      "portions": 4,
+      "recipe_components": [
+        {
+          "name": "Curry Base",
+          "ingredients_per_portion": [
+            {
+              "name": "Chicken",
+              "measurement_type": "grams",
+              "amount_per_portion": 150
+            },
+            {
+              "name": "Onion",
+              "measurement_type": "units",
+              "amount_per_portion": 0.5
+            },
+            {
+              "name": "Garlic",
+              "measurement_type": "cloves",
+              "amount_per_portion": 1
+            },
+            {
+              "name": "Ginger",
+              "measurement_type": "teaspoon",
+              "amount_per_portion": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Spice Mix",
+          "ingredients_per_portion": [
+            {
+              "name": "Cumin",
+              "measurement_type": "teaspoon",
+              "amount_per_portion": 0.5
+            },
+            {
+              "name": "Turmeric",
+              "measurement_type": "teaspoon",
+              "amount_per_portion": 0.25
+            },
+            {
+              "name": "Coriander",
+              "measurement_type": "teaspoon",
+              "amount_per_portion": 0.5
+            },
+            {
+              "name": "Garam Masala",
+              "measurement_type": "teaspoon",
+              "amount_per_portion": 0.25
+            }
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "number": 1,
+          "description": "Heat oil in a pot and cook the onions until golden."
+        },
+        {
+          "number": 2,
+          "description": "Add garlic, ginger, and the spice mix, stirring well."
+        },
+        {
+          "number": 3,
+          "description": "Add the chicken and cook until browned."
+        },
+        {
+          "number": 4,
+          "description": "Pour in coconut milk and simmer until chicken is cooked through."
+        },
+        {
+          "number": 5,
+          "description": "Serve with rice and garnish with fresh cilantro."
+        }
+      ]
+    },
+    {
+      "title": "Beef Stroganoff",
+      "description": "A creamy Russian dish made with beef, mushrooms, and sour cream.",
+      "estimated_time": "25-30 min",
+      "difficulty": "medium",
+      "portions": 4,
+      "recipe_components": [
+        {
+          "name": "Beef Mix",
+          "ingredients_per_portion": [
+            {
+              "name": "Beef",
+              "measurement_type": "grams",
+              "amount_per_portion": 150
+            },
+            {
+              "name": "Mushrooms",
+              "measurement_type": "grams",
+              "amount_per_portion": 50
+            },
+            {
+              "name": "Onion",
+              "measurement_type": "units",
+              "amount_per_portion": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Sauce",
+          "ingredients_per_portion": [
+            {
+              "name": "Sour Cream",
+              "measurement_type": "tablespoons",
+              "amount_per_portion": 2
+            },
+            {
+              "name": "Butter",
+              "measurement_type": "tablespoons",
+              "amount_per_portion": 1
+            }
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "number": 1,
+          "description": "Sauté onions and mushrooms in butter until softened."
+        },
+        {
+          "number": 2,
+          "description": "Add beef and cook until browned."
+        },
+        {
+          "number": 3,
+          "description": "Stir in sour cream and let it simmer."
+        },
+        {
+          "number": 4,
+          "description": "Serve over egg noodles or rice."
+        }
+      ]
+    },
+    {
+      "title": "Vegetable Stir Fry",
+      "description": "A quick and healthy stir fry made with a variety of fresh vegetables.",
+      "estimated_time": "10-15 min",
+      "difficulty": "easy",
+      "portions": 2,
+      "recipe_components": [
+        {
+          "name": "Vegetables",
+          "ingredients_per_portion": [
+            {
+              "name": "Bell Peppers",
+              "measurement_type": "grams",
+              "amount_per_portion": 50
+            },
+            {
+              "name": "Broccoli",
+              "measurement_type": "grams",
+              "amount_per_portion": 50
+            },
+            {
+              "name": "Carrots",
+              "measurement_type": "grams",
+              "amount_per_portion": 30
+            }
+          ]
+        },
+        {
+          "name": "Sauce",
+          "ingredients_per_portion": [
+            {
+              "name": "Soy Sauce",
+              "measurement_type": "tablespoons",
+              "amount_per_portion": 1
+            },
+            {
+              "name": "Garlic",
+              "measurement_type": "cloves",
+              "amount_per_portion": 1
+            }
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "number": 1,
+          "description": "Heat oil in a wok and add vegetables."
+        },
+        {
+          "number": 2,
+          "description": "Stir-fry vegetables until tender-crisp."
+        },
+        {
+          "number": 3,
+          "description": "Add sauce and cook for another minute."
+        },
+        {
+          "number": 4,
+          "description": "Serve hot over rice or noodles."
+        }
+      ]
+    },
+      {
+        "title": "Pesto Pasta",
+        "description": "A vibrant and flavorful pasta dish with a creamy pesto sauce made from fresh basil, garlic, Parmesan cheese, and pine nuts.",
+        "estimated_time": "20 min",
+        "difficulty": "easy",
+        "portions": 2,
+        "recipe_components": [
+          {
+            "name": "Pasta Base",
+            "ingredients_per_portion": [
+              {
+                "name": "Pasta",
+                "measurement_type": "grams",
+                "amount_per_portion": 100
+              }
+            ]
+          },
+          {
+            "name": "Pesto Sauce",
+            "ingredients_per_portion": [
+              {
+                "name": "Basil Leaves",
+                "measurement_type": "cups",
+                "amount_per_portion": 1
+              },
+              {
+                "name": "Parmesan Cheese",
+                "measurement_type": "grams",
+                "amount_per_portion": 20
+              },
+              {
+                "name": "Garlic",
+                "measurement_type": "cloves",
+                "amount_per_portion": 1
+              },
+              {
+                "name": "Pine Nuts",
+                "measurement_type": "tablespoons",
+                "amount_per_portion": 1
+              },
+              {
+                "name": "Olive Oil",
+                "measurement_type": "tablespoons",
+                "amount_per_portion": 2
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "number": 1,
+            "description": "Cook pasta in boiling salted water until al dente."
+          },
+          {
+            "number": 2,
+            "description": "In a food processor, blend basil, Parmesan, garlic, and pine nuts until smooth."
+          },
+          {
+            "number": 3,
+            "description": "Gradually add olive oil to the mixture, blending until creamy."
+          },
+          {
+            "number": 4,
+            "description": "Drain pasta and mix with pesto sauce. Serve immediately."
+          }
+        ]
+      },
+      {
+        "title": "Vegetable Pad Thai",
+        "description": "A Thai-inspired stir-fried noodle dish with vegetables, tofu, and a tangy peanut sauce.",
+        "estimated_time": "30 min",
+        "difficulty": "medium",
+        "portions": 3,
+        "recipe_components": [
+          {
+            "name": "Noodle Base",
+            "ingredients_per_portion": [
+              {
+                "name": "Rice Noodles",
+                "measurement_type": "grams",
+                "amount_per_portion": 80
+              }
+            ]
+          },
+          {
+            "name": "Vegetables",
+            "ingredients_per_portion": [
+              {
+                "name": "Carrots",
+                "measurement_type": "grams",
+                "amount_per_portion": 30
+              },
+              {
+                "name": "Bell Peppers",
+                "measurement_type": "grams",
+                "amount_per_portion": 30
+              },
+              {
+                "name": "Tofu",
+                "measurement_type": "grams",
+                "amount_per_portion": 50
+              }
+            ]
+          },
+          {
+            "name": "Pad Thai Sauce",
+            "ingredients_per_portion": [
+              {
+                "name": "Peanut Butter",
+                "measurement_type": "tablespoons",
+                "amount_per_portion": 1
+              },
+              {
+                "name": "Soy Sauce",
+                "measurement_type": "tablespoons",
+                "amount_per_portion": 1
+              },
+              {
+                "name": "Lime Juice",
+                "measurement_type": "tablespoons",
+                "amount_per_portion": 1
+              },
+              {
+                "name": "Brown Sugar",
+                "measurement_type": "teaspoon",
+                "amount_per_portion": 0.5
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "number": 1,
+            "description": "Cook rice noodles according to package instructions."
+          },
+          {
+            "number": 2,
+            "description": "Sauté carrots, bell peppers, and tofu in a large pan."
+          },
+          {
+            "number": 3,
+            "description": "In a bowl, mix peanut butter, soy sauce, lime juice, and brown sugar to make the sauce."
+          },
+          {
+            "number": 4,
+            "description": "Add cooked noodles and sauce to the pan. Stir until well combined and heated through."
+          },
+          {
+            "number": 5,
+            "description": "Serve garnished with chopped peanuts and lime wedges."
+          }
+        ]
+      },
+      {
+        "title": "Mushroom Risotto",
+        "description": "A creamy and savory Italian rice dish cooked with mushrooms, garlic, and Parmesan cheese.",
+        "estimated_time": "45 min",
+        "difficulty": "medium",
+        "portions": 4,
+        "recipe_components": [
+          {
+            "name": "Risotto Base",
+            "ingredients_per_portion": [
+              {
+                "name": "Arborio Rice",
+                "measurement_type": "grams",
+                "amount_per_portion": 75
+              },
+              {
+                "name": "Mushrooms",
+                "measurement_type": "grams",
+                "amount_per_portion": 50
+              },
+              {
+                "name": "Onion",
+                "measurement_type": "units",
+                "amount_per_portion": 0.25
+              }
+            ]
+          },
+          {
+            "name": "Flavorings",
+            "ingredients_per_portion": [
+              {
+                "name": "Garlic",
+                "measurement_type": "cloves",
+                "amount_per_portion": 1
+              },
+              {
+                "name": "Parmesan Cheese",
+                "measurement_type": "grams",
+                "amount_per_portion": 10
+              },
+              {
+                "name": "Butter",
+                "measurement_type": "tablespoons",
+                "amount_per_portion": 0.5
+              },
+              {
+                "name": "White Wine",
+                "measurement_type": "tablespoons",
+                "amount_per_portion": 1
+              }
+            ]
+          },
+          {
+            "name": "Broth",
+            "ingredients_per_portion": [
+              {
+                "name": "Vegetable Broth",
+                "measurement_type": "cups",
+                "amount_per_portion": 0.75
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "number": 1,
+            "description": "Sauté onions, mushrooms, and garlic in butter until soft."
+          },
+          {
+            "number": 2,
+            "description": "Add Arborio rice and cook for a few minutes until lightly toasted."
+          },
+          {
+            "number": 3,
+            "description": "Add white wine and stir until absorbed."
+          },
+          {
+            "number": 4,
+            "description": "Gradually add broth, stirring constantly, until rice is creamy and cooked through."
+          },
+          {
+            "number": 5,
+            "description": "Stir in Parmesan cheese and adjust seasoning. Serve hot."
+          }
+        ]
+      }
+    ]
+  }
