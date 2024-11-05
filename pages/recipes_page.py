@@ -34,8 +34,5 @@ def recipes_page():
         page = RecipePage(st.session_state.selected_recipe)
         page.display_recipe()
 
-        if st.button("Go Back"):
-            st.session_state.selected_recipe = None
-
 if __name__ == "__main__":
     recipes_page()

@@ -46,23 +46,23 @@
       "steps": [
         {
           "number": 1,
-          "description": "Boil the spaghetti in salted water until al dente."
+          "description": "Start by boiling a large pot of salted water. Once it reaches a rolling boil, add the spaghetti and cook until it’s al dente (firm to the bite), according to the package instructions. While the pasta cooks, prepare the other ingredients so everything is ready to combine while the spaghetti is hot."
         },
         {
           "number": 2,
-          "description": "In a separate pan, cook the pancetta until crispy."
+          "description": "In a separate pan over medium heat, cook the pancetta until it becomes crispy and releases its fat. Stir occasionally to ensure even cooking. Once the pancetta is crisp and golden, remove the pan from heat and set it aside. The rendered fat will be used to flavor the pasta."
         },
         {
           "number": 3,
-          "description": "Whisk eggs and Pecorino Romano together."
+          "description": "In a mixing bowl, whisk together the eggs and grated Pecorino Romano cheese until smooth and creamy. Make sure to whisk thoroughly to avoid clumping. The mixture should have a thick consistency and a slight sheen. Add a small amount of freshly cracked black pepper to taste."
         },
         {
           "number": 4,
-          "description": "Combine pasta with pancetta and mix with egg mixture, stirring quickly."
+          "description": "When the pasta is al dente, reserve a small cup of pasta cooking water, then drain the spaghetti. Quickly transfer the hot spaghetti to the pan with pancetta (off the heat), and toss to coat the pasta in the pancetta fat. Immediately pour the egg and cheese mixture over the pasta, tossing rapidly to create a creamy sauce. Add a bit of reserved pasta water as needed to achieve a smooth, silky consistency."
         },
         {
           "number": 5,
-          "description": "Serve immediately with extra Pecorino and black pepper."
+          "description": "Serve the carbonara immediately, plating it while hot. Finish with extra grated Pecorino Romano and a sprinkling of freshly cracked black pepper for an extra kick. Enjoy your delicious homemade Spaghetti Carbonara!"
         }
       ]
     },
@@ -127,23 +127,23 @@
       "steps": [
         {
           "number": 1,
-          "description": "Heat oil in a pot and cook the onions until golden."
+          "description": "Start by heating oil in a pot over medium heat. Add finely chopped onions and cook until they become golden brown and soft, stirring occasionally to avoid burning."
         },
         {
           "number": 2,
-          "description": "Add garlic, ginger, and the spice mix, stirring well."
+          "description": "Add minced garlic and grated ginger to the pot, followed by the spice mix. Stir well to coat the onions in the spices and cook until fragrant, about 1-2 minutes."
         },
         {
           "number": 3,
-          "description": "Add the chicken and cook until browned."
+          "description": "Add the chicken pieces to the pot and cook, stirring frequently, until they are browned on all sides. This should take around 5-7 minutes."
         },
         {
           "number": 4,
-          "description": "Pour in coconut milk and simmer until chicken is cooked through."
+          "description": "Pour in coconut milk, stirring well to combine with the chicken and spices. Bring the mixture to a simmer and cook until the chicken is fully cooked through and tender, approximately 15-20 minutes."
         },
         {
           "number": 5,
-          "description": "Serve with rice and garnish with fresh cilantro."
+          "description": "Serve the curry hot with steamed rice, and garnish with freshly chopped cilantro for added flavor."
         }
       ]
     },
@@ -510,5 +510,4 @@
           }
         ]
       }
-    ]
-  }
+  ]}
