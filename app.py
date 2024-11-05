@@ -7,7 +7,7 @@ from pages.recipes_page import recipes_page
 class App:
     def __init__(self):
         self.cap = cv.VideoCapture(0)
-        st.set_page_config(layout="wide", page_title="Handy Recipes", page_icon="🤙")
+        st.set_page_config(layout="wide", page_title="Handy Recipes", page_icon="assets/HandyRecipes.png")
         self.selected_option = display_navbar()  # Display navbar and store selected option
 
     def home_page(self):

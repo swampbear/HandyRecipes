@@ -1,4 +1,4 @@
-# HandyRecipes
+# Recipe Management System
 
 A Python-based Recipe Management System designed to organize, display, and interact with recipes through a clean interface built with Streamlit. This project includes a structured JSON-based recipe database, dynamic loading and display of recipes, and customizable layouts for an intuitive browsing experience.
 
@@ -9,7 +9,7 @@ A Python-based Recipe Management System designed to organize, display, and inter
 - **Recipe Steps**: Detailed step-by-step instructions are available for each recipe, allowing for easy replication of the dishes.
 - **Streamlit Interface**: A user-friendly interface for browsing and selecting recipes, displaying components, ingredients, and steps.
 - **JSON Parsing and Service Layer**: Recipes are dynamically fetched from JSON and converted into custom Python objects, thanks to a dedicated service layer for efficient data handling.
-- **Hand Gestures for altrenating trough steps**: Use hand gestures to manouver between recipe steps
+- **Hand Gestures for Scrolling**: Use hand gestures to scroll through recipe pages. This feature uses a hand detection system to recognize gestures like swiping up or down, allowing users to navigate the recipe content without touching their device.
 
 ## Project Structure
 
@@ -21,7 +21,6 @@ project-root/
 │   ├── Recipe.py                # Recipe model with components and ingredients
 │   ├── RecipeComponents.py      # RecipeComponents model to represent components of a recipe
 │   └── Ingredient.py            # Ingredient model for individual ingredients
-│   └── Step.py                  # Step model with stepnumber and description
 ├── pages/
 │   └── recipe_page.py           # Streamlit page to display recipe details
 ├── service/
@@ -120,13 +119,15 @@ The recipe data is stored in a structured JSON file format within the `database`
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/HandyRecipea.git
+   git clone https://github.com/your-username/recipe-management-system.git
    cd recipe-management-system
    ```
 
 2. **Install Dependencies**:
    - Ensure you have Python 3.7+ and install required libraries:
-   Had some bugs setting up the env with conda. So here you just ned to ran and pipinstall missing dependencies. Working to fix it.
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 3. **Run the Streamlit Application**:
    ```bash
@@ -135,9 +136,10 @@ The recipe data is stored in a structured JSON file format within the `database`
 
 ## Usage
 
-- **Browse Recipes**: When the app starts, it displays a home screen, with a nav bar that can be used to reach recepies, settings and about
+- **Browse Recipes**: When the app starts, it displays all available recipes. Each recipe is listed as a button, allowing users to click and view more details.
 - **View Recipe Details**: Click on a recipe to see detailed components, ingredients, and steps to make the dish.
-- **Hand Gesture Navigation**: Use hand gestures to move trough recipes steps, providing a touch-free navigation experience.
+- **Hand Gesture Navigation**: Use hand gestures to scroll through recipe pages, providing a touch-free navigation experience.
+- **Go Back**: After viewing a recipe, use the "Go Back" button to return to the main recipe list.
 
 ## License
 

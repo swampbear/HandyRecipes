@@ -2,6 +2,7 @@ import streamlit as st
 from hand_estimation import HandEstimation
 import cv2 as cv
 from models.Recipe import Recipe
+import time
 
 class RecipePage:
     # Define font size variables
@@ -99,7 +100,7 @@ class RecipePage:
                 border-radius: 8px; 
                 display: flex; 
                 justify-content: space-between;
-                width: 60%;
+                width: 100%;
                 margin: 20px auto;
                 color: #333333;
             ">
@@ -129,6 +130,7 @@ class RecipePage:
                 self.step = st.empty()
             self.display_current_step()
         with col2:
+            st.image("assets/HandyRecipes.png", use_column_width=True)
             # Button to start real-time hand estimation
             if st.button("Start Real-Time Hand Estimation"):
                 st.session_state.video_running = True
@@ -143,6 +145,10 @@ class RecipePage:
         if st.button("Stop Real-Time Hand Estimation"):
             st.session_state.video_running = False
 
+        # Track gesture holding times
+        gesture_start_time = None
+        current_gesture = None
+
         # Display the real-time video feed if video_running is True
         while st.session_state.video_running:
             ret, frame = self.cap.read()
@@ -155,17 +161,35 @@ class RecipePage:
 
             if len(lmsList) != 0:
                 fingers = self.detector.findFingerUp()
-                # Scroll down if index finger is up
+                
+                # Check if index finger is held up (for next step)
                 if fingers[1] == 1 and sum(fingers) == 1:
-                    if self.current_step < len(self.recipe.steps) - 1:
-                        self.current_step += 1
-                        self.display_current_step()
-                # Scroll up if thumb is up
+                    # Start timing if this is a new gesture or continue if same
+                    if current_gesture != "next":
+                        gesture_start_time = time.time()
+                        current_gesture = "next"
+                    elif gesture_start_time and time.time() - gesture_start_time >= 0.3:  # Held for 1 second
+                        if self.current_step < len(self.recipe.steps) - 1:
+                            self.current_step += 1
+                            self.display_current_step()
+                        gesture_start_time = None  # Reset after action
+
+                # Check if thumb is held up (for previous step)
                 elif fingers[0] == 1 and sum(fingers) == 1:
-                    if self.current_step > 0:
-                        self.current_step -= 1
-                        self.display_current_step()
-                    
+                    # Start timing if this is a new gesture or continue if same
+                    if current_gesture != "previous":
+                        gesture_start_time = time.time()
+                        current_gesture = "previous"
+                    elif gesture_start_time and time.time() - gesture_start_time >= 0.3:  # Held for 1 second
+                        if self.current_step > 0:
+                            self.current_step -= 1
+                            self.display_current_step()
+                        gesture_start_time = None  # Reset after action
+                else:
+                    # Reset if no recognized gesture is held
+                    gesture_start_time = None
+                    current_gesture = None
+
             frame = cv.cvtColor(frame, cv.COLOR_BGR2RGB)
             img = cv.resize(frame, (640, 480))
             video_container.image(img, channels="RGB")  # Update the video feed in the left column
