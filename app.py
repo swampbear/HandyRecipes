@@ -7,8 +7,18 @@ from pages.recipes_page import recipes_page
 class App:
     def __init__(self):
         self.cap = cv.VideoCapture(0)
-        st.set_page_config(layout="wide", page_title="Handy Recipes", page_icon="assets/HandyRecipes.png")
+        st.set_page_config(layout="wide", page_title="Handy Recipes", page_icon="assets/HandyRecipes.png", initial_sidebar_state="collapsed")
         self.selected_option = display_navbar()  # Display navbar and store selected option
+        hide_sidebar = """
+            <style>
+            [data-testid="stSidebar"] {display: none;}
+            [data-testid="stSidebarNav"] {display: none;}
+            #MainMenu { visibility: hidden; }
+            footer { visibility: hidden; }
+            </style>
+        """
+        st.markdown(hide_sidebar, unsafe_allow_html=True)
+
 
     def home_page(self):
         home_page()
