@@ -8,7 +8,7 @@ class RecipePage:
     # Define font size variables
     TITLE_FONT_SIZE = "2.2em"
     DESCRIPTION_FONT_SIZE = "1.5em"
-    SECTION_TITLE_FONT_SIZE = "1.8em"
+    SECTION_TITLE_FONT_SIZE = "2.5em"
     COMPONENT_FONT_SIZE = "1.5em"
     INGREDIENT_FONT_SIZE = "1.2em"
     STEP_FONT_SIZE = "1.5em"
@@ -76,18 +76,29 @@ class RecipePage:
 
     def display_current_step(self):
         current_step = self.recipe.steps[self.current_step]
+
+        # Split the description into sentences and format each as a bullet point
+        description_sentences = current_step.description.split('.')
+        formatted_description = "".join(
+            f"<li style='margin-bottom: 8px;'>{sentence.strip()}</li>" 
+            for sentence in description_sentences if sentence.strip()
+        )
+
         self.step.markdown(
             f"""
             <div style="padding: 15px; background-color: #333333; border-radius: 8px;">
-                <h2 style="color: #FFFFFF; font-weight: bold; font-size: {self.SECTION_TITLE_FONT_SIZE};">Step {current_step.number}</h2>
+                <h2 style="color: #FFFFFF; font-weight: bold; font-size: {self.SECTION_TITLE_FONT_SIZE};">
+                    Step {current_step.number}
+                </h2>
             </div>
             <div style="padding: 15px; background-color: #FFFFFF; border-radius: 8px; margin-top: 20px;">
-                <p style="font-size: {self.STEP_FONT_SIZE}; color: #333333;">{current_step.description}</p>
+                <ul style="font-size: {self.STEP_FONT_SIZE}; color: #333333;">
+                    {formatted_description}
+                </ul>
             </div>
             """,
             unsafe_allow_html=True
         )
-
 
         
     
@@ -130,7 +141,7 @@ class RecipePage:
                 self.step = st.empty()
             self.display_current_step()
         with col2:
-            st.image("assets/HandyRecipes.png", use_column_width=True)
+            st.image("assets/food.jpg", use_column_width=True )
             # Button to start real-time hand estimation
             if st.button("Start Real-Time Hand Estimation"):
                 st.session_state.video_running = True
