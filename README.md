@@ -149,7 +149,7 @@ The recipe data is stored in a structured JSON file format within the `database`
 
 ## Usage
 
-- **Browse Recipes**: When the app starts, it displays all available recipes. Each recipe is listed as a button, allowing users to click and view more details.
+- **Browse Recipes**: When entering the recipes page you see all the available recipes that can be browsed
 - **View Recipe Details**: Click on a recipe to see detailed components, ingredients, and steps to make the dish.
 - **Hand Gesture Navigation**: Use hand gestures to scroll through recipe steps, providing a touch-free navigation experience.
 
