@@ -1,8 +1,10 @@
-# Recipe Management System
+# HandyRecipes
 
-A Python-based Recipe Management System designed to organize, display, and interact with recipes through a clean interface built with Streamlit. This project includes a structured JSON-based recipe database, dynamic loading and display of recipes, and customizable layouts for an intuitive browsing experience.
+A recipe webapp containing tasty recipes and a gesture based step treversal feature. By simply showing your indexfinger to the camera you can move trough the different recipe steps. Never get fat, flour and other ingridients spilled over your device ever again!
 
 ## Features
+
+### Honorable mention to chatGPT for creating these great bulletpoints
 
 - **Recipe Database**: Recipes are stored in a structured JSON file format, making it easy to add, update, or delete recipes.
 - **Recipe Components**: Each recipe consists of components (e.g., "Sauce," "Base") that break down ingredients by portion size.
@@ -20,8 +22,11 @@ project-root/
 ├── models/
 │   ├── Recipe.py                # Recipe model with components and ingredients
 │   ├── RecipeComponents.py      # RecipeComponents model to represent components of a recipe
-│   └── Ingredient.py            # Ingredient model for individual ingredients
+│   ├── Ingridient.py            # Ingredient model for individual ingredients
+│   └── Steps.py                 # Step model containing step number and description
 ├── pages/
+│   ├── home_page.py             # Streamlit page to display the home page
+│   ├── recepies_page.py         # Streamlit page where you can choose what dish you want to displays
 │   └── recipe_page.py           # Streamlit page to display recipe details
 ├── service/
 │   └── RecipeService.py         # Service layer to fetch and parse JSON recipes
@@ -138,8 +143,7 @@ The recipe data is stored in a structured JSON file format within the `database`
 
 - **Browse Recipes**: When the app starts, it displays all available recipes. Each recipe is listed as a button, allowing users to click and view more details.
 - **View Recipe Details**: Click on a recipe to see detailed components, ingredients, and steps to make the dish.
-- **Hand Gesture Navigation**: Use hand gestures to scroll through recipe pages, providing a touch-free navigation experience.
-- **Go Back**: After viewing a recipe, use the "Go Back" button to return to the main recipe list.
+- **Hand Gesture Navigation**: Use hand gestures to scroll through recipe steps, providing a touch-free navigation experience.
 
 ## License
 
