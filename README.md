@@ -124,7 +124,7 @@ The recipe data is stored in a structured JSON file format within the `database`
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/recipe-management-system.git
+   git clone https://github.com/your-username/HandyRecipes.git
    cd recipe-management-system
    ```
 
