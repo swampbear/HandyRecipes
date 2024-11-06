@@ -125,16 +125,24 @@ The recipe data is stored in a structured JSON file format within the `database`
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/your-username/HandyRecipes.git
-   cd recipe-management-system
+   cd HandyRecipes
    ```
-
-2. **Install Dependencies**:
+2. Create and activate viritual environtment
+   ```bash
+   python3 -m venv <myenvname>
+   ```
+3. Activate environtment
+   ```bash
+   source myvenvname/bin/activate
+   ```
+   
+5. **Install Dependencies**:
    - Ensure you have Python 3.7+ and install required libraries:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Run the Streamlit Application**:
+6. **Run the Streamlit Application**:
    ```bash
    streamlit run app.py
    ```
