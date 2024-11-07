@@ -2,6 +2,14 @@
 
 A recipe webapp containing tasty recipes and a gesture based step treversal feature. By simply showing your indexfinger to the camera you can move trough the different recipe steps. Never get fat, flour and other ingridients spilled over your device ever again!
 
+## Imports used and handrecognition class
+### OpenCV
+Used to access camera from device
+### Mediapipe
+Mediapipe is used together with open cv to create functions for fingerUp find position and so on described in the mediumarticle below. The most important for us in this project is tp utilize the fingerUp method and connecting it to events suiting our usecases
+### Class for drawing nodes and edges, and register fingers, or combination of fingers
+The class in the hand_estimation.py is retrieved from the following Medium article: [Hand Detection Tracking in Python using OpenCV and MediaPipe](https://gautamaditee.medium.com/hand-recognition-using-opencv-a7b109941c88)
+
 ## Features
 
 ### Honorable mention to chatGPT for creating these great bulletpoints
