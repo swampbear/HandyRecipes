@@ -1,0 +1,22 @@
+[client]
+showErrorDetails = false
+showSidebarNavigation = false
+
+[theme]
+# palett: https://coolors.co/palette/ccd5ae-e9edc9-fefae0-faedcd-d4a373
+# Primary accent for interactive elements
+primaryColor = '#D4A373'
+
+# Background color for the main content area
+backgroundColor = '#E9EDC9'
+
+# Background color for sidebar and most interactive widgets
+secondaryBackgroundColor = '#CCD5AE'
+
+# Color used for almost all text
+textColor = '#000000'
+
+# Font family for all text in the app, except code blocks
+# Accepted values (serif | sans serif | monospace) 
+# Default: "sans serif"
+font = "sans serif"
