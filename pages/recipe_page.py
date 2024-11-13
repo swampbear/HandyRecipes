@@ -173,13 +173,12 @@ class RecipePage:
             if len(lmsList) != 0:
                 fingers = self.detector.findFingerUp()
                 
-                # Check if index finger is held up (for next step)
                 if fingers[1] == 1 and sum(fingers) == 1:
                     # Start timing if this is a new gesture or continue if same
                     if current_gesture != "next":
                         gesture_start_time = time.time()
                         current_gesture = "next"
-                    elif gesture_start_time and time.time() - gesture_start_time >= 0.3:  # Held for 1 second
+                    elif gesture_start_time and time.time() - gesture_start_time >= 0.3:  # Held for 0.3 second
                         if self.current_step < len(self.recipe.steps) - 1:
                             self.current_step += 1
                             self.display_current_step()
@@ -191,7 +190,7 @@ class RecipePage:
                     if current_gesture != "previous":
                         gesture_start_time = time.time()
                         current_gesture = "previous"
-                    elif gesture_start_time and time.time() - gesture_start_time >= 0.3:  # Held for 1 second
+                    elif gesture_start_time and time.time() - gesture_start_time >= 0.3:  # Held for 0.3 second
                         if self.current_step > 0:
                             self.current_step -= 1
                             self.display_current_step()
@@ -203,7 +202,7 @@ class RecipePage:
 
             frame = cv.cvtColor(frame, cv.COLOR_BGR2RGB)
             img = cv.resize(frame, (640, 480))
-            video_container.image(img, channels="RGB")  # Update the video feed in the left column
+            video_container.image(img, channels="RGB")  # Update the video feed
 
         # Release the camera resource when done
         self.cap.release()
