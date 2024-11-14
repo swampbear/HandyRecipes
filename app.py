@@ -1,9 +1,13 @@
 import streamlit as st
+
 import cv2 as cv
-from components.navbar import display_navbar
+
 from app_pages.home_page import home_page
+from app_pages.about_page import about_page
 from app_pages.recipes_page import recipes_page
 from app_pages.settings_page import settings_page
+
+from components.navbar import display_navbar
 
 class App:
     def __init__(self):
@@ -31,8 +35,7 @@ class App:
         settings_page()
 
     def about_page(self):
-        st.title("About")
-        st.write("Information about the Handy Recipes app.")
+        about_page()
 
     def display_content(self):
         # Display the selected page based on the navbar option

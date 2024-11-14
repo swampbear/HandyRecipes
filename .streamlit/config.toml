@@ -2,6 +2,9 @@
 showErrorDetails = false
 showSidebarNavigation = false
 
+[server]
+enableStaticServing = true
+
 [theme]
 # palett: https://coolors.co/palette/ccd5ae-e9edc9-fefae0-faedcd-d4a373
 # Primary accent for interactive elements
