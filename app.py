@@ -1,8 +1,9 @@
 import streamlit as st
 import cv2 as cv
 from components.navbar import display_navbar
-from pages.home_page import home_page
-from pages.recipes_page import recipes_page
+from app_pages.home_page import home_page
+from app_pages.recipes_page import recipes_page
+from app_pages.settings_page import settings_page
 
 class App:
     def __init__(self):
@@ -27,8 +28,7 @@ class App:
         recipes_page()
 
     def settings_page(self):
-        st.title("Settings")
-        st.write("This is where you can adjust settings for the app.")
+        settings_page()
 
     def about_page(self):
         st.title("About")
@@ -40,8 +40,8 @@ class App:
             self.home_page()
         elif self.selected_option == "Recipes":
             self.recipes_page()  # Call the real-time hand detection in "Recipes"
-        elif self.selected_option == "Settings":
-            self.settings_page()
+        # elif self.selected_option == "Settings":
+        #     self.settings_page()
         elif self.selected_option == "About":
             self.about_page()
 
