@@ -35,7 +35,8 @@ class RecipePage:
                 padding: 15px; 
                 background-color: {st.get_option("theme.secondaryBackgroundColor")}; 
                 border-radius: 8px; 
-                margin: 20px 0;"
+                margin: 20px 0 0 0;
+                "
                 >
                 <h1 style=" font-weight: bold; font-size: {self.TITLE_FONT_SIZE};">{self.recipe.title}</h1>
                 <i>{self.recipe.description}</i>
@@ -53,39 +54,46 @@ class RecipePage:
         )
     
     def display_ingredients(self):
-        st.markdown(
-            f"""
-            <div style="padding: 15px; background-color: {st.get_option("theme.secondaryBackgroundColor")}; border-radius: 8px 8px 0 0;">
-                <h2 style="font-weight: bold; font-size: {self.SECTION_TITLE_FONT_SIZE};">Ingredients:</h2>
-            </div>
-            """, 
-            unsafe_allow_html=True
-        )
-        for component in self.recipe.recipe_components:
-            st.markdown(
-                f"""
-                <div style="padding: 5px 5px 5px 15px; background-color: {st.get_option("theme.secondaryBackgroundColor")};">
-                    <p style="font-size: {self.COMPONENT_FONT_SIZE}; font-weight: bold; color: #0B2C51">{component.name}</p>
-                </div>
-                """, 
-                unsafe_allow_html=True
-            )
-            for ingredient in component.ingredients_per_portion:
-                st.markdown(
-                    f"""
-                    <div style="padding-left: 30px; font-size: {self.INGREDIENT_FONT_SIZE}; background-color: {st.get_option("theme.secondaryBackgroundColor")};">
-                        - {ingredient.name}: {ingredient.amount_per_portion} {ingredient.measurement_type}
-                    </div>
-                    """, 
-                    unsafe_allow_html=True
+        html = """\
+            <div style="padding: 15px; 
+                background-color: {}; 
+                border-radius: 8px;
+                margin: 20px 0;
+                ">
+                <h2 style="font-weight: bold; font-size: {};">Ingredients:</h2>
+            """.format(
+                st.get_option("theme.secondaryBackgroundColor"),
+                self.SECTION_TITLE_FONT_SIZE
                 )
-        st.markdown(
-            f"""
-            <div style="background-color: {st.get_option("theme.secondaryBackgroundColor")}; border-radius: 0 0 8px 8px; height: 10px; margin-bottom: 20px;">
+        
+        for component in self.recipe.recipe_components:
+            html += """\
+                <div style="padding: 5px 5px 5px 15px; background-color: {};">
+                    <p style="font-size: {}; font-weight: bold; color: #0B2C51">{}</p>
+                </div>
+                """.format(
+                    st.get_option("theme.secondaryBackgroundColor"),
+                    self.COMPONENT_FONT_SIZE,
+                    component.name
+                )
+            for ingredient in component.ingredients_per_portion:
+                html += """\
+                    <div style="padding-left: 30px; font-size: {}; background-color: {};">
+                        - {}: {} {}
+                    </div>
+                    """.format(
+                        self.INGREDIENT_FONT_SIZE,
+                        st.get_option("theme.secondaryBackgroundColor"),
+                        ingredient.name,
+                        ingredient.amount_per_portion,
+                        ingredient.measurement_type,
+                    )
+                
+        html += """
             </div>
-            """,
-            unsafe_allow_html=True
-        )
+            """
+        
+        st.markdown(html, unsafe_allow_html=True)
 
     def display_current_step(self):
         current_step = self.recipe.steps[self.current_step]
@@ -143,10 +151,18 @@ class RecipePage:
 
     def display_recipe(self):
         # Set up two columns: left for video, right for text
-        col1, col2 = st.columns(2)
+        fuck, col1, you = st.columns([1,2,1])
 
+        with fuck:
+            st.markdown("<div></div>", unsafe_allow_html=True)
         # Display recipe information on the right column
         with col1:
+            st.image("assets/food.jpg")
+
+            # Button 
+            if st.button("Start Real-Time Hand Estimation"):
+                st.session_state.video_running = True
+                self.real_time_hand_estimation(col1)  # Pass the left column to the video method
             self.display_title_and_description()
             # Display the estimated time and difficulty
             # self.display_time_and_difficulty()
@@ -157,12 +173,9 @@ class RecipePage:
             if self.step is None:
                 self.step = st.empty()
             self.display_current_step()
-        with col2:
-            st.image("assets/food.jpg", use_column_width=True )
-            # Button to start real-time hand estimation
-            if st.button("Start Real-Time Hand Estimation"):
-                st.session_state.video_running = True
-                self.real_time_hand_estimation(col2)  # Pass the left column to the video method
+
+        with you:
+            st.markdown("<div></div>", unsafe_allow_html=True)
 
 
     def real_time_hand_estimation(self, video_column):

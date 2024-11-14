@@ -10,23 +10,37 @@ def fetch_recipes():
 def recipes_page():
     recipes = fetch_recipes()
 
-    st.title("Browse Recipes")
-    st.write("Choose a recipe you like from the list below:")
+    # Header section with centered text
+    html = """\
+        <div style="
+        padding: 5px 10px; 
+        text-align: center; 
+        max-width: 50%; 
+        margin: 0 auto 20px auto;
+        border-radius: 22px;
+        background-color: {};
+        ">
+        <h1>Browse Recipes</h1>
+        <p>Choose a recipe you like from the list below:</p>
+        </div>
+    """.format(st.get_option("theme.secondaryBackgroundColor"))
+
+    st.markdown(html, unsafe_allow_html=True)
 
     # Initialize session state for selected recipe
     if "selected_recipe" not in st.session_state:
         st.session_state.selected_recipe = None
 
-    # Define the number of columns per row
-    num_columns = 5  # Adjust based on your layout preference
+    num_columns = 10
     columns = st.columns(num_columns)
 
     # Display recipe options in columns
     for index, recipe in enumerate(recipes):
-        col = columns[index % num_columns]  # Cycle through columns for each recipe
+        col = columns[index+3]  # Cycle through columns for each recipe
 
         with col:
-            if st.button(recipe.title, key=index):
+            # Center the button within the column and limit the width
+            if st.button(recipe.title, key=index, help="Click to view this recipe"):
                 st.session_state.selected_recipe = recipe  # Set the selected recipe in session state
 
     # Display the selected recipe using RecipePage
