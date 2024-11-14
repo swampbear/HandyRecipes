@@ -5,7 +5,7 @@ import cv2 as cv
 from app_pages.home_page import home_page
 from app_pages.about_page import about_page
 from app_pages.recipes_page import recipes_page
-from app_pages.settings_page import settings_page
+from app_pages.how_to_use import how_to_use
 
 from components.navbar import display_navbar
 
@@ -31,8 +31,8 @@ class App:
     def recipes_page(self):
         recipes_page()
 
-    def settings_page(self):
-        settings_page()
+    def how_to_use_page(self):
+        how_to_use()
 
     def about_page(self):
         about_page()
@@ -43,8 +43,8 @@ class App:
             self.home_page()
         elif self.selected_option == "Recipes":
             self.recipes_page()  # Call the real-time hand detection in "Recipes"
-        # elif self.selected_option == "Settings":
-        #     self.settings_page()
+        elif self.selected_option == "Tutorial":
+            self.how_to_use_page()
         elif self.selected_option == "About":
             self.about_page()
 
