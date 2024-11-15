@@ -5,7 +5,7 @@ A recipe webapp containing tasty recipes and a gesture based step treversal feat
 ## LINK TO DEMONSTRATION OF THE APPLICATION CLICK THE IMAGE BELOW
 [![Watch the video](https://img.youtube.com/vi/BjRyf9MhWf4/0.jpg)](https://www.youtube.com/watch?v=BjRyf9MhWf4)
 
-## Imports used and handrecognition class
+## Imports used and hand estimation class
 ### OpenCV
 Used to access camera from device
 ### Mediapipe
