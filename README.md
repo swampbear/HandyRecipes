@@ -2,6 +2,9 @@
 
 A recipe webapp containing tasty recipes and a gesture based step treversal feature. By simply showing your indexfinger to the camera you can move trough the different recipe steps. Never get fat, flour and other ingridients spilled over your device ever again, wile keeping your hands free from devices full of bacteria!
 
+## LINK TO DEMONSTRATION OF THE APPLICATION
+[![Watch the video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
+
 ## Imports used and handrecognition class
 ### OpenCV
 Used to access camera from device
