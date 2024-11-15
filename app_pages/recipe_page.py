@@ -104,7 +104,8 @@ class RecipePage:
             f"<li style='margin-bottom: 8px;'>{sentence.strip()}</li>" 
             for sentence in description_sentences if sentence.strip()
         )
-
+        if self.step is None:
+            self.step = st.empty()
         self.step.markdown(
             f"""
             <div style="padding: 15px; background-color: {st.get_option("theme.secondaryBackgroundColor")}; border-radius: 8px;">
@@ -151,30 +152,32 @@ class RecipePage:
 
     def display_recipe(self):
         # Set up two columns: left for video, right for text
-        fuck, col1, you = st.columns([1,2,1])
+        col1, col2, col3 = st.columns([1,2,1])
 
-        with fuck:
+        with col1:
             st.markdown("<div></div>", unsafe_allow_html=True)
         # Display recipe information on the right column
-        with col1:
+        with col2:
             st.image("assets/food.jpg")
 
-            # Button 
-            if st.button("Start Real-Time Hand Estimation"):
-                st.session_state.video_running = True
-                self.real_time_hand_estimation(col1)  # Pass the left column to the video method
+           
+            
+            # Display the steps for each component
+            if self.step is None:
+                self.step = st.empty()
+            self.display_current_step()
+
+        with col3:
             self.display_title_and_description()
             # Display the estimated time and difficulty
             # self.display_time_and_difficulty()
             
             # Display the ingredients for each component
             self.display_ingredients()
-            # Display the steps for each component
-            if self.step is None:
-                self.step = st.empty()
-            self.display_current_step()
-
-        with you:
+             # Button 
+            if st.button("Start Real-Time Hand Estimation"):
+                st.session_state.video_running = True
+                self.real_time_hand_estimation(col3)  # Pass the left column to the video method
             st.markdown("<div></div>", unsafe_allow_html=True)
 
 
