@@ -5,7 +5,6 @@ from models.Recipe import Recipe
 import time
 
 class RecipePage:
-    # Define font size variables
     TITLE_FONT_SIZE = "2.2em"
     DESCRIPTION_FONT_SIZE = "1.5em"
     SECTION_TITLE_FONT_SIZE = "2.5em"
@@ -22,7 +21,7 @@ class RecipePage:
         self.step = None
         self.current_step = 0
         
-        # Initialize session state for managing video feed
+        # Initialize session state for managing video feed amf recipe page
         if "video_running" not in st.session_state:
             st.session_state.video_running = False
         if "recipe_page" not in st.session_state:
@@ -98,7 +97,7 @@ class RecipePage:
     def display_current_step(self):
         current_step = self.recipe.steps[self.current_step]
 
-        # Split the description into sentences and format each as a bullet point
+        # Split the description into sentences and format each as a bullet point because im to lazy to change the json format
         description_sentences = current_step.description.split('.')
         formatted_description = "".join(
             f"<li style='margin-bottom: 8px;'>{sentence.strip()}</li>" 
@@ -151,39 +150,27 @@ class RecipePage:
         )
 
     def display_recipe(self):
-        # Set up two columns: left for video, right for text
         col1, col2, col3 = st.columns([1,2,1])
 
         with col1:
             st.markdown("<div></div>", unsafe_allow_html=True)
-        # Display recipe information on the right column
         with col2:
             st.image("assets/food.jpg")
-
-           
-            
-            # Display the steps for each component
             if self.step is None:
                 self.step = st.empty()
             self.display_current_step()
 
         with col3:
             self.display_title_and_description()
-            # Display the estimated time and difficulty
-            # self.display_time_and_difficulty()
-            
-            # Display the ingredients for each component
             self.display_ingredients()
-             # Button 
             if st.button("Start Real-Time Hand Estimation"):
                 st.session_state.video_running = True
-                self.real_time_hand_estimation(col3)  # Pass the left column to the video method
+                self.real_time_hand_estimation(col3)
             st.markdown("<div></div>", unsafe_allow_html=True)
 
 
     def real_time_hand_estimation(self, video_column):
-        # Use the provided column for video display
-        video_container = video_column.empty()  # Container for the video feed in the left column
+        video_container = video_column.empty()
 
         # Stop button to control the video feed
         if st.button("Stop Real-Time Hand Estimation"):
@@ -212,7 +199,7 @@ class RecipePage:
                     if current_gesture != "next":
                         gesture_start_time = time.time()
                         current_gesture = "next"
-                    elif gesture_start_time and time.time() - gesture_start_time >= 0.3:  # Held for 1 second
+                    elif gesture_start_time and time.time() - gesture_start_time >= 0.3:  # Held for 0.3 second
                         if self.current_step < len(self.recipe.steps) - 1:
                             self.current_step += 1
                             self.display_current_step()
@@ -224,7 +211,7 @@ class RecipePage:
                     if current_gesture != "previous":
                         gesture_start_time = time.time()
                         current_gesture = "previous"
-                    elif gesture_start_time and time.time() - gesture_start_time >= 0.3:  # Held for 1 second
+                    elif gesture_start_time and time.time() - gesture_start_time >= 0.3:  # Held for 0.3 second
                         if self.current_step > 0:
                             self.current_step -= 1
                             self.display_current_step()
